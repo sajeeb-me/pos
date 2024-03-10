@@ -1,4 +1,6 @@
 import React from 'react';
+import CardWithGoods from './shared/CardWithGoods';
+import Button from './shared/Button';
 
 interface HomePageGoodsProps {
     // define your props here
@@ -9,8 +11,17 @@ const HomePageGoods: React.FC<HomePageGoodsProps> = (props) => {
 
     return (
         <div>
-            {/* Your component code goes here */}
-            <p>Home Page Goods</p>
+            <div className='mb-10'>
+                <Button label='Buy' customClass='bg-primary text-white' />
+                <Button label='Sell' customClass='bg-primary text-white' />
+            </div>
+            <div className='grid grid-cols-3 gap-5'>
+                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
+                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
+                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
+                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
+                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
+            </div>
         </div>
     );
 };
