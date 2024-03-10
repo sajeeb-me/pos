@@ -14,7 +14,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ customClass, type = "button", label, variant = 'primary', size, outline, link, onClick, disabled = false }) => {
-    const coreClasses = `form-control mb-5 w-full${` ${customClass}` || ""}`;
+    const coreClasses = `bg-primary text-white py-2 px-5 mb-5 rounded-md ${` ${customClass}` || ""}`;
 
 
     const handleOnClickMethod = link ? () => window.open(link, '_blank') : onClick;

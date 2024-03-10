@@ -12,8 +12,8 @@ const HomePageGoods: React.FC<HomePageGoodsProps> = (props) => {
     return (
         <div>
             <div className='mb-10'>
-                <Button label='Buy' customClass='bg-primary text-white' />
-                <Button label='Sell' customClass='bg-primary text-white' />
+                <Button label='Buy' customClass='mr-2' />
+                <Button label='Sell' customClass='mr-2' />
             </div>
             <div className='grid grid-cols-3 gap-5'>
                 <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
