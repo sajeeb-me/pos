@@ -14,7 +14,46 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ customClass, type = "button", label, variant = 'primary', size, outline, link, onClick, disabled = false }) => {
-    const coreClasses = `bg-primary text-white py-2 px-5 mb-5 rounded-md ${` ${customClass}` || ""}`;
+    let coreClasses = ` py-2 px-6 rounded-md ${` ${customClass}` || ""}`;
+
+    switch (variant) {
+        case 'primary':
+            coreClasses += ' bg-primary text-white bg-opacity-90 hover:bg-opacity-100 transition duration-300 ease-in-out';
+            break;
+        case 'secondary':
+            coreClasses += ' bg-secondary';
+            break;
+        case 'error':
+            coreClasses += ' bg-error';
+            break;
+        case 'link':
+            coreClasses += ' bg-link p-0 text-left';
+            break;
+        case 'disabled':
+            coreClasses += ' bg-disabled';
+            break;
+        case 'ghost':
+            coreClasses += ' bg-ghost bg-opacity-50 hover:bg-opacity-100 transition duration-300 ease-in-out';
+            break;
+        default:
+            break;
+    }
+
+    switch (size) {
+        case 'extra-small':
+            coreClasses += ' btn-xs';
+            break;
+        case 'small':
+            coreClasses += ' btn-sm';
+            break;
+        case 'large':
+            coreClasses += ' btn-lg';
+            break;
+        default:
+            break;
+    }
+
+    outline && (coreClasses += ' btn-outline');
 
 
     const handleOnClickMethod = link ? () => window.open(link, '_blank') : onClick;

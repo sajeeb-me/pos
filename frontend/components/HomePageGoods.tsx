@@ -12,7 +12,7 @@ const HomePageGoods: React.FC<HomePageGoodsProps> = (props) => {
     return (
         <div>
             <div className='mb-10'>
-                <Button label='Buy' customClass='mr-2' />
+                <Button variant='ghost' label='Buy' customClass='mr-2' />
                 <Button label='Sell' customClass='mr-2' />
             </div>
             <div className='grid grid-cols-3 gap-5'>

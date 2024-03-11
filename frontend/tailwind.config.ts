@@ -17,6 +17,8 @@ const config: Config = {
         'lavender-blue': '#C8D8FF',
         'rich-black': '#00120B',
         'indigo': '#1E285F',
+        'ghost': '#BFC0C0',
+        'secondary': '#184ED3',
         'primary': '#184ED3',
       },
       backgroundImage: {
