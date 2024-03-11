@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
                 <div className='col-span-2  border-black'>
                     <HomePageGoods />
                 </div>
-                <div className='col-span-1  bg-white shadow-md p-5 rounded-xl h-[75vh]'>
+                <div className='col-span-1 bg-white shadow-md p-3 rounded-xl'>
                     <HomePageOrders />
                 </div>
             </div>

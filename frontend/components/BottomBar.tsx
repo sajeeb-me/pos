@@ -11,6 +11,8 @@ const BottomBar: React.FC = () => {
                     <Link href="/dashboard">Dashboard</Link>
                     <Link href="/dashboard">Today</Link>
                     <Link href="/dashboard">Stock</Link>
+                    |
+                    <div className='border border-black rounded-full h-8 w-8' ></div>
                 </ul>
             </nav>
         </div>
