@@ -11,7 +11,7 @@ const HomePageGoods: React.FC<HomePageGoodsProps> = (props) => {
 
     return (
         <div>
-            <div className='mb-10'>
+            <div className='mb-5'>
                 <Button variant='ghost' label='Buy' customClass='mr-2' />
                 <Button label='Sell' customClass='mr-2' />
             </div>
