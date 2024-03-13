@@ -63,3 +63,60 @@ export const mockProductPriceQuantityTotal = [
         productQuantity: 2, 
     }
 ]
+
+export const mockCardWithGoods = [
+    {
+        id:1,
+        name: 'Shirt',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+        id:2,
+        name: 'Shirta',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+        id:3,
+        name: 'Shirtb',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+        id:4,
+        name: 'Shirtc',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+        id:5,
+        name: 'Shirtd',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+        id:6,
+        name: 'Shirte',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+        id:7,
+        name: 'Shirtf',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+        id:8,
+        name: 'Shirtg',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    },
+    {
+        id:9,
+        name: 'Shirth',
+        price: 100,
+        imageUrl: 'https://via.placeholder.com/150'
+    }
+]

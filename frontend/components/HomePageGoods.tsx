@@ -1,6 +1,8 @@
 import React from 'react';
 import CardWithGoods from './shared/CardWithGoods';
 import Button from './shared/Button';
+import { mock } from 'node:test';
+import { mockCardWithGoods } from '@/app/mockData';
 
 interface HomePageGoodsProps {
     // define your props here
@@ -16,15 +18,11 @@ const HomePageGoods: React.FC<HomePageGoodsProps> = (props) => {
                 <Button label='Sell' customClass='mr-2' />
             </div>
             <div className='grid grid-cols-3 gap-5 max-h-[75vh] overflow-y-scroll'>
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
-                <CardWithGoods goods={{ id: '1', name: 'Shirt', price: 100, imageUrl: 'https://via.placeholder.com/150' }} />
+                {
+                    mockCardWithGoods.map((mockGoods) => (
+                        <CardWithGoods key={mockGoods.id} goods={mockGoods} />
+                    ))
+                }
             </div>
         </div>
     );
