@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
     return (
         <div className=''>
             <BottomBar />
-            <div className='grid grid-cols-3 gap-x-5'>
+            <div className='grid grid-cols-3 gap-x-2'>
                 <div className='col-span-2  border-black'>
                     <HomePageGoods />
                 </div>

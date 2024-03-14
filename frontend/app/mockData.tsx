@@ -67,56 +67,374 @@ export const mockProductPriceQuantityTotal = [
 export const mockCardWithGoods = [
     {
         id:1,
-        name: 'Shirt',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
+        name: 'R.B',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 11,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 12,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 13,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 14,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
     },
     {
         id:2,
-        name: 'Shirta',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
+        name: 'Tripti',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 21,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 22,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 23,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 24,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
     },
     {
         id:3,
-        name: 'Shirtb',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
+        name: 'Bashundhara',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 31,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 32,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 33,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 34,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
     },
     {
-        id:4,
-        name: 'Shirtc',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
+        id:1,
+        name: 'R.B',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 11,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 12,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 13,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 14,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
     },
     {
-        id:5,
-        name: 'Shirtd',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
+        id:2,
+        name: 'Tripti',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 21,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 22,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 23,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 24,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
     },
     {
-        id:6,
-        name: 'Shirte',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
+        id:3,
+        name: 'Bashundhara',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 31,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 32,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 33,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 34,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
     },
     {
-        id:7,
-        name: 'Shirtf',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
+        id:1,
+        name: 'R.B',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 11,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 12,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 13,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 14,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
     },
     {
-        id:8,
-        name: 'Shirtg',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
+        id:2,
+        name: 'Tripti',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 21,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 22,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 23,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 24,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
     },
     {
-        id:9,
-        name: 'Shirth',
-        price: 100,
-        imageUrl: 'https://via.placeholder.com/150'
-    }
+        id:3,
+        name: 'Bashundhara',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 31,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 32,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 33,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 34,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
+    },
+    {
+        id:1,
+        name: 'R.B',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 11,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 12,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 13,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 14,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
+    },
+    {
+        id:2,
+        name: 'Tripti',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 21,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 22,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 23,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 24,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
+    },
+    {
+        id:3,
+        name: 'Bashundhara',
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
+        subProducts: [
+            {
+                id: 31,
+                name: '5 ltr',
+                price: 530,
+                quantity: 800,
+            },
+            {
+                id: 32,
+                name: '2 ltr',
+                price: 240,
+                quantity: 280,
+            },
+            {
+                id: 33,
+                name: '1 ltr',
+                price: 128,
+                quantity: 350,
+            },
+            {
+                id: 34,
+                name: '500 ml',
+                price: 65,
+                quantity: 1234,
+            },
+        ],
+    },
 ]
