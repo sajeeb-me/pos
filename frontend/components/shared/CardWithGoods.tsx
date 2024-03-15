@@ -22,7 +22,7 @@ const CardWithGoods: React.FC<CardWithGoodsProps> = ({ goods }) => {
                 </div>
             </div>
             <div className="card-body mt-2">
-                <ul className='gap-x-2 flex justify-between text-sm'>
+                <ul className='text-sm grid grid-cols-4 gap-1'>
                     {
                         goods.subProducts.map((subProduct, index) => (
                             <li key={index} className="relative border hover:border-primary p-1 rounded-md min-w-14 cursor-pointer duration-300">
