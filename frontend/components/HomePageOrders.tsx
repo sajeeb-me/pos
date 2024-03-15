@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from './shared/Button';
 import { mockProductPriceQuantityTotal } from '@/app/mockData';
+import Image from 'next/image';
+import { MdDeleteOutline } from "react-icons/md";
 
 interface ProductPriceQuantityTotalProps {
     productName: string;
@@ -43,15 +45,16 @@ const HomePageOrders: React.FC = () => {
                             </thead>
                             <tbody>
                                 {mockProductPriceQuantityTotal.map((product, index) => (
-                                    <tr key={product.id} className={index % 2 === 0 ? 'bg-ghost' : ''}>
+                                    <tr key={product.id} className={index % 2 === 0 ? 'bg-ghost bg-opacity-15' : ''}>
                                         <td className='flex items-center gap-x-2 border-r border-dashed'>
-                                            <div className='bg-slate-500 h-10 w-10 rounded-lg'></div>
+                                            <Image src={product.imageUrl} alt={product.productName} width={40} height={40} className='rounded-md' />
+
                                             <div className='text-xs'>
                                                 <p className='font-bold'>{product.productName.slice(0, 10)}</p>
                                                 <p>{product.productSize}</p>
                                             </div>
                                         </td>
-                                        <td className='border-r border-dashed text-center'>{product.productPrice}</td>
+                                        <td className='border-r border-dashed text-end pr-1'>{product.productPrice} &#2547;</td>
                                         <td className='border-r border-dashed text-center'>
                                             <div className='flex justify-between items-center gap-x-2 px-0.5'>
                                                 <button className='border rounded-md px-2'>-</button>
@@ -59,7 +62,8 @@ const HomePageOrders: React.FC = () => {
                                                 <button className='border rounded-md px-2 text-end'>+</button>
                                             </div>
                                         </td>
-                                        <td className='text-end'>{product.productPrice * product.productQuantity} tk</td>
+                                        <td className='border-r border-dashed text-end pr-1'>{product.productPrice * product.productQuantity} &#2547;</td>
+                                        <td className='text-red-500 text-2xl opacity-20 hover:opacity-100 cursor-pointer duration-300 ease-in-out'><MdDeleteOutline /></td>
                                     </tr>
                                 ))}
                             </tbody>

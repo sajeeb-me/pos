@@ -5,6 +5,7 @@ export const mockProductPriceQuantityTotal = [
         productSize: '2 ltr',
         productPrice: 100,
         productQuantity: 2,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
         id:2,
@@ -12,6 +13,7 @@ export const mockProductPriceQuantityTotal = [
         productSize: '3000 ltr',
         productPrice: 3200,
         productQuantity: 120,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
         id:3,
@@ -19,6 +21,7 @@ export const mockProductPriceQuantityTotal = [
         productSize: '1 ltr',
         productPrice: 100,
         productQuantity: 3,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
         id:4,
@@ -26,6 +29,7 @@ export const mockProductPriceQuantityTotal = [
         productSize: '2 ltr',
         productPrice: 1000,
         productQuantity: 2,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
         id:5,
@@ -33,6 +37,7 @@ export const mockProductPriceQuantityTotal = [
         productSize: '5 ltr',
         productPrice: 100,
         productQuantity: 2,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
         id:6,
@@ -40,6 +45,7 @@ export const mockProductPriceQuantityTotal = [
         productSize: '2/1 ltr',
         productPrice: 100,
         productQuantity: 2,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
         id:7,
@@ -47,6 +53,7 @@ export const mockProductPriceQuantityTotal = [
         productSize: '2 ltr',
         productPrice: 100,
         productQuantity: 2,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
         id:8,
@@ -54,13 +61,15 @@ export const mockProductPriceQuantityTotal = [
         productSize: '2 ltr',
         productPrice: 100,
         productQuantity: 2,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
         id:9,
         productName: 'R.B',
         productSize: '2 ltr',
         productPrice: 100,
-        productQuantity: 2, 
+        productQuantity: 2,
+        imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg', 
     }
 ]
 
