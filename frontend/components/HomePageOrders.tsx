@@ -81,8 +81,8 @@ const HomePageOrders: React.FC = () => {
                             <p>Discount Sales</p>
                         </div>
                         <div className='flex flex-col items-end'>
-                            <p>1056 tk</p>
-                            <p>56 tk</p>
+                            <p>1056 &#2547;</p>
+                            <p>56 &#2547;</p>
                         </div>
                     </div>
 
@@ -92,11 +92,11 @@ const HomePageOrders: React.FC = () => {
 
                     <div className='flex justify-between'>
                         <p>Total </p>
-                        <p>1000 tk</p>
+                        <p>1000 &#2547;</p>
                     </div>
                     <div className='flex justify-between'>
                         <p>Paid</p>
-                        <p>1000 tk</p>
+                        <p>1000 &#2547;</p>
                     </div>
 
                     <div className='bg-white h-5 w-5 absolute rounded-full -left-3'></div>
@@ -105,7 +105,7 @@ const HomePageOrders: React.FC = () => {
 
                     <div className='flex justify-between'>
                         <p>Due</p>
-                        <p>0 tk</p>
+                        <p>0 &#2547;</p>
                     </div>
                 </div>
                 <Button label='Print' customClass='w-full' />
