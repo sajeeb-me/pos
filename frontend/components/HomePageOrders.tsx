@@ -58,7 +58,10 @@ const HomePageOrders: React.FC = () => {
                                         <td className='border-r border-dashed text-center'>
                                             <div className='flex justify-between items-center gap-x-2 px-0.5'>
                                                 <button className='border rounded-md px-2'>-</button>
-                                                <p>{product.productQuantity}</p>
+                                                {/* <p>{product.productQuantity}</p> */}
+                                                <p>
+                                                    <input type="number" className='w-8 text-center border-b border-black bg-transparent outline-none' />
+                                                </p>
                                                 <button className='border rounded-md px-2 text-end'>+</button>
                                             </div>
                                         </td>
