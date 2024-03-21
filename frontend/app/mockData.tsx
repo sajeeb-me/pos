@@ -1,6 +1,6 @@
 export const mockProductPriceQuantityTotal = [
     {
-        id:1,
+        id:"1",
         productName: 'R.B',
         productSize: '2 ltr',
         productPrice: 100,
@@ -8,7 +8,7 @@ export const mockProductPriceQuantityTotal = [
         imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
-        id:2,
+        id:"2",
         productName: 'R.B Dram',
         productSize: '3000 ltr',
         productPrice: 3200,
@@ -16,7 +16,7 @@ export const mockProductPriceQuantityTotal = [
         imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
-        id:3,
+        id:"3",
         productName: 'Tripti',
         productSize: '1 ltr',
         productPrice: 100,
@@ -24,7 +24,7 @@ export const mockProductPriceQuantityTotal = [
         imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
-        id:4,
+        id:"4",
         productName: 'Bashundhara',
         productSize: '2 ltr',
         productPrice: 1000,
@@ -32,7 +32,7 @@ export const mockProductPriceQuantityTotal = [
         imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
-        id:5,
+        id:"5",
         productName: 'Tripti',
         productSize: '5 ltr',
         productPrice: 100,
@@ -40,7 +40,7 @@ export const mockProductPriceQuantityTotal = [
         imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
-        id:6,
+        id:"6",
         productName: 'R.B',
         productSize: '2/1 ltr',
         productPrice: 100,
@@ -48,7 +48,7 @@ export const mockProductPriceQuantityTotal = [
         imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
-        id:7,
+        id:"7",
         productName: 'Teer',
         productSize: '2 ltr',
         productPrice: 100,
@@ -56,7 +56,7 @@ export const mockProductPriceQuantityTotal = [
         imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
-        id:8,
+        id:"8",
         productName: 'R.B',
         productSize: '2 ltr',
         productPrice: 100,
@@ -64,7 +64,7 @@ export const mockProductPriceQuantityTotal = [
         imageUrl: 'https://i.ibb.co/b5qyhvM/fresh-oil.jpg',
     },
     {
-        id:9,
+        id:"9",
         productName: 'R.B',
         productSize: '2 ltr',
         productPrice: 100,
