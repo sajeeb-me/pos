@@ -3,6 +3,7 @@ import Button from './shared/Button';
 import { mockProductPriceQuantityTotal } from '@/app/mockData';
 import Image from 'next/image';
 import { MdDeleteOutline } from "react-icons/md";
+import ProductQuantity from './shared/ProductQuantity';
 
 interface ProductPriceQuantityTotalProps {
     id: string;
@@ -15,11 +16,11 @@ interface ProductPriceQuantityTotalProps {
 
 const HomePageOrders: React.FC = () => {
 
-    const handleQuantityChange = (productId: string, newQuantity: number) => {
-        // Here you should implement the logic to update the quantity of the product with the given id.
-        // This could involve calling an API, updating a state variable, or some other action depending on your application.
-        console.log(`Product with id ${productId} has new quantity ${newQuantity}`);
+    const handleQuantityChange = (newQuantity: any) => {
+        // setProduct((prevProduct) => ({ ...prevProduct, productQuantity: newQuantity }));
+        // Perform other actions based on the updated quantity (e.g., update cart)
     };
+
 
     return (
         <div className='h-full flex flex-col justify-between'>
@@ -65,11 +66,12 @@ const HomePageOrders: React.FC = () => {
                                         <td className='border-r border-dashed text-end pr-1'>{product.productPrice} &#2547;</td>
                                         <td className='border-r border-dashed text-center'>
                                             <div className='flex justify-between items-center gap-x-2 px-0.5'>
-                                                <button className='border rounded-md px-2' onClick={() => handleQuantityChange(product.id, product.productQuantity - 1)}>-</button>
+                                                {/* <button className='border rounded-md px-2'>-</button>
                                                 <p>
                                                     <input type="number" value={product.productQuantity} className='w-8 text-center border-b border-black bg-transparent outline-none' readOnly />
                                                 </p>
-                                                <button className='border rounded-md px-2 text-end' onClick={() => handleQuantityChange(product.id, product.productQuantity + 1)}>+</button>
+                                                <button className='border rounded-md px-2 text-end'>+</button> */}
+                                                <ProductQuantity product={product} onQuantityChange={handleQuantityChange} />
                                             </div>
                                         </td>
                                         <td className='border-r border-dashed text-end pr-1'>{product.productPrice * product.productQuantity} &#2547;</td>
