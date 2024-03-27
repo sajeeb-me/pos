@@ -6,8 +6,8 @@ interface Product {
     productQuantity: number;
     // Add other properties of product here
 }
-// function ProductQuantity({ product, onQuantityChange }) {
-function ProductQuantity({ product, onQuantityChange }: { product: Product, onQuantityChange: (quantity: number) => void }) {
+
+const ProductQuantity: React.FC<{ product: Product, onQuantityChange: (quantity: number) => void }> = ({ product, onQuantityChange }) => {
     const [quantity, setQuantity] = useState(product.productQuantity);
 
     const handleDecrement = () => {
