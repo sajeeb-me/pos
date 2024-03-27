@@ -1,6 +1,13 @@
+"use client"
+
 import { useState } from 'react';
 
-function ProductQuantity({ product, onQuantityChange }) {
+interface Product {
+    productQuantity: number;
+    // Add other properties of product here
+}
+// function ProductQuantity({ product, onQuantityChange }) {
+function ProductQuantity({ product, onQuantityChange }: { product: Product, onQuantityChange: (quantity: number) => void }) {
     const [quantity, setQuantity] = useState(product.productQuantity);
 
     const handleDecrement = () => {
@@ -25,8 +32,8 @@ function ProductQuantity({ product, onQuantityChange }) {
                     <input
                         type="number"
                         value={quantity}
-                        className='w-8 text-center border-b border-black bg-transparent outline-none'
-                        readOnly
+                        className='w-10 text-center border-b border-black bg-transparent outline-none'
+
                     />
                 </p>
                 <button className='border rounded-md px-2 text-end' onClick={handleIncrement}>
@@ -38,3 +45,15 @@ function ProductQuantity({ product, onQuantityChange }) {
 }
 
 export default ProductQuantity;
+
+
+// const [count, setCount] = useState<number>(0);
+
+// const increment = () => {
+//   setCount(count + 1);
+// };
+
+// const decrement = () => {
+//   // Prevent decrementing below 0
+//   setCount(Math.max(0, count - 1));
+// };
