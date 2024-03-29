@@ -6,6 +6,7 @@ import { mockProductPriceQuantityTotal } from '@/app/mockData';
 import Image from 'next/image';
 import { MdDeleteOutline } from "react-icons/md";
 import ProductQuantity from './shared/ProductQuantity';
+import SalesAmountInfo from './shared/SalesAmountInfo';
 
 interface ProductPriceQuantityTotalProps {
     id: string;
@@ -16,13 +17,16 @@ interface ProductPriceQuantityTotalProps {
     customClass?: string;
 }
 
-const HomePageOrders: React.FC = () => {
+interface HomePageOrdersProps {
+    cart: any[];
+    setCart: any;
+}
 
+const HomePageOrders: React.FC<HomePageOrdersProps> = ({cart, setCart}) => {
     const handleQuantityChange = (newQuantity: any) => {
         // setProduct((prevProduct) => ({ ...prevProduct, productQuantity: newQuantity }));
         // Perform other actions based on the updated quantity (e.g., update cart)
     };
-
 
     return (
         <div className='h-full flex flex-col justify-between'>
@@ -55,24 +59,19 @@ const HomePageOrders: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {mockProductPriceQuantityTotal.map((product, index) => (
+                                {cart.map((product, index) => (
                                     <tr key={product.id} className={index % 2 === 0 ? 'bg-ghost bg-opacity-15' : ''}>
                                         <td className='flex items-center gap-x-2 border-r border-dashed'>
                                             <Image src={product.imageUrl} alt={product.productName} width={40} height={40} className='rounded-md' />
 
                                             <div className='text-xs'>
-                                                <p className='font-bold'>{product.productName.slice(0, 10)}</p>
+                                                <p className='font-bold'>{product.productName?.slice(0, 10)}</p>
                                                 <p>{product.productSize}</p>
                                             </div>
                                         </td>
                                         <td className='border-r border-dashed text-end pr-1'>{product.productPrice} &#2547;</td>
                                         <td className='border-r border-dashed text-center'>
                                             <div className='flex justify-between items-center gap-x-2 px-0.5'>
-                                                {/* <button className='border rounded-md px-2'>-</button>
-                                                <p>
-                                                    <input type="number" value={product.productQuantity} className='w-8 text-center border-b border-black bg-transparent outline-none' readOnly />
-                                                </p>
-                                                <button className='border rounded-md px-2 text-end'>+</button> */}
                                                 <ProductQuantity product={product} onQuantityChange={handleQuantityChange} />
                                             </div>
                                         </td>
@@ -87,43 +86,7 @@ const HomePageOrders: React.FC = () => {
             </div>
 
             {/* Sales info */}
-            <div className='text-sm' >
-                <div className='relative bg-ghost bg-opacity-50 p-3 rounded-xl mb-1'>
-                    <div className='flex justify-between'>
-                        <div>
-                            <p>Subtotal</p>
-                            <p>Discount Sales</p>
-                        </div>
-                        <div className='flex flex-col items-end'>
-                            <p>1056 &#2547;</p>
-                            <p>56 &#2547;</p>
-                        </div>
-                    </div>
-
-                    <div className='bg-white h-5 w-5 absolute rounded-full -left-3'></div>
-                    <div className='bg-white h-5 w-5 absolute rounded-full -right-3'></div>
-                    <hr className='border-black border-dashed my-2' />
-
-                    <div className='flex justify-between'>
-                        <p>Total </p>
-                        <p>1000 &#2547;</p>
-                    </div>
-                    <div className='flex justify-between'>
-                        <p>Paid</p>
-                        <p>1000 &#2547;</p>
-                    </div>
-
-                    <div className='bg-white h-5 w-5 absolute rounded-full -left-3'></div>
-                    <div className='bg-white h-5 w-5 absolute rounded-full -right-3'></div>
-                    <hr className='border-black border-dashed my-2' />
-
-                    <div className='flex justify-between'>
-                        <p>Due</p>
-                        <p>0 &#2547;</p>
-                    </div>
-                </div>
-                <Button label='Print' customClass='w-full' />
-            </div >
+            <SalesAmountInfo />
         </div >
     );
 };

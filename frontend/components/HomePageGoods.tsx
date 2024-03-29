@@ -6,9 +6,11 @@ import { mockCardWithGoods } from '@/app/mockData';
 
 interface HomePageGoodsProps {
     // define your props here
+    cart: any[];
+    setCart: any;
 }
 
-const HomePageGoods: React.FC<HomePageGoodsProps> = (props) => {
+const HomePageGoods: React.FC<HomePageGoodsProps> = ({ cart, setCart }) => {
     // You can destructure your props here if you have any
 
     return (
@@ -20,7 +22,7 @@ const HomePageGoods: React.FC<HomePageGoodsProps> = (props) => {
             <div className='grid grid-cols-3 gap-5 max-h-[75vh] overflow-y-scroll'>
                 {
                     mockCardWithGoods.map((mockGoods) => (
-                        <CardWithGoods key={mockGoods.id} goods={mockGoods} />
+                        <CardWithGoods key={mockGoods.id} goods={mockGoods} cart={cart} setCart={setCart} />
                     ))
                 }
             </div>

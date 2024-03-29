@@ -447,3 +447,5 @@ export const mockCardWithGoods = [
         ],
     },
 ]
+
+export const mockCart = []

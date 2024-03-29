@@ -45,15 +45,3 @@ const ProductQuantity: React.FC<{ product: Product, onQuantityChange: (quantity:
 }
 
 export default ProductQuantity;
-
-
-// const [count, setCount] = useState<number>(0);
-
-// const increment = () => {
-//   setCount(count + 1);
-// };
-
-// const decrement = () => {
-//   // Prevent decrementing below 0
-//   setCount(Math.max(0, count - 1));
-// };
