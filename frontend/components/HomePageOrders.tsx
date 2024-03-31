@@ -12,7 +12,7 @@ interface ProductPriceQuantityTotalProps {
     id: string;
     productName: string;
     productSize: string;
-    productPrice: number;
+    price: number;
     productQuantity: number;
     customClass?: string;
 }
@@ -30,6 +30,8 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({cart, setCart}) => {
             : product
         ));
     };
+
+    const subtotal =  cart.reduce((total, product) => total + (product.price * product.productQuantity), 0);
 
     return (
         <div className='h-full flex flex-col justify-between'>
@@ -89,7 +91,7 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({cart, setCart}) => {
             </div>
 
             {/* Sales info */}
-            <SalesAmountInfo />
+            <SalesAmountInfo subtotal={subtotal} />
         </div >
     );
 };

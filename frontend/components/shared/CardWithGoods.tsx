@@ -16,8 +16,6 @@ interface CardWithGoodsProps {
 
 const CardWithGoods: React.FC<CardWithGoodsProps> = ({ goods, cart, setCart }) => {
 
-    console.log(cart)
-
     const addToCart = (subProduct: any) => {
         // setCart([...cart, subProduct]);
 
