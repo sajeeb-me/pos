@@ -24,8 +24,11 @@ interface HomePageOrdersProps {
 
 const HomePageOrders: React.FC<HomePageOrdersProps> = ({cart, setCart}) => {
     const handleQuantityChange = (newQuantity: any) => {
-        // setProduct((prevProduct) => ({ ...prevProduct, productQuantity: newQuantity }));
-        // Perform other actions based on the updated quantity (e.g., update cart)
+        setCart((prevCart: ProductPriceQuantityTotalProps[]) => prevCart.map((product: ProductPriceQuantityTotalProps) => 
+            product.id === newQuantity.id 
+            ? { ...product, productQuantity: newQuantity.productQuantity }
+            : product
+        ));
     };
 
     return (

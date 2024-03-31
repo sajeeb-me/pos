@@ -2,24 +2,40 @@
 
 import { useState } from 'react';
 
+
 interface Product {
     productQuantity: number;
     // Add other properties of product here
 }
-
-const ProductQuantity: React.FC<{ product: Product, onQuantityChange: (quantity: number) => void }> = ({ product, onQuantityChange }) => {
+const ProductQuantity: React.FC<{ product: Product, onQuantityChange: (product: Product) => void }> = ({ product, onQuantityChange }) => {
     const [quantity, setQuantity] = useState(product.productQuantity);
 
     const handleDecrement = () => {
         if (quantity > 0) {
             setQuantity(quantity - 1);
-            onQuantityChange(quantity - 1); // Trigger handler for parent component
+            onQuantityChange({
+                ...product,
+                productQuantity: quantity - 1,
+            })
+
         }
     };
 
     const handleIncrement = () => {
         setQuantity(quantity + 1);
-        onQuantityChange(quantity + 1); // Trigger handler for parent component
+        onQuantityChange({
+            ...product,
+            productQuantity: quantity + 1,
+        })
+    };
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newQuantity = parseInt(event.target.value);
+        setQuantity(newQuantity);
+        onQuantityChange({
+            ...product,
+            productQuantity: newQuantity,
+        })
     };
 
     return (
@@ -32,8 +48,8 @@ const ProductQuantity: React.FC<{ product: Product, onQuantityChange: (quantity:
                     <input
                         type="number"
                         value={quantity}
+                        onChange={handleInputChange}
                         className='w-10 text-center border-b border-black bg-transparent outline-none'
-
                     />
                 </p>
                 <button className='border rounded-md px-2 text-end' onClick={handleIncrement}>
