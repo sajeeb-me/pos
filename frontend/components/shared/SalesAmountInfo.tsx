@@ -9,6 +9,15 @@ interface SalesAmountInfoProps {
 const SalesAmountInfo: React.FC<SalesAmountInfoProps> = ({ subtotal }) => {
     // use your props here
     const [discountPrice, setDiscountPrice] = useState(0);
+    const [paidPrice, setPaidPrice] = useState(0);
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setDiscountPrice(Number(event.target.value));
+    }
+
+    const handlePaidPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPaidPrice(Number(event.target.value));
+    }
 
     return (
         <div className='text-sm' >
@@ -16,18 +25,19 @@ const SalesAmountInfo: React.FC<SalesAmountInfoProps> = ({ subtotal }) => {
                 <div className='flex justify-between'>
                     <div>
                         <p>Subtotal</p>
-                        <p>Discount Sales</p>
+                        <p>Discount</p>
                     </div>
                     <div className='flex flex-col items-end'>
                         <p>{subtotal} &#2547;</p>
                         {/* <p>56 &#2547;</p> */}
                         <div>
                             <input
-                                type="text"
-                                className='border rounded-lg h-8 w-20'
-                                placeholder='Discount'
-                                onChange={(e) => setDiscountPrice(parseInt(e.target.value))}
+                                type="number"
+                                className='w-20 border-b border-white text-end bg-transparent outline-none mr-1'
+                                placeholder='00'
+                                onChange={handleInputChange}
                             />
+                            &#2547;
                         </div>
                     </div>
                 </div>
@@ -43,7 +53,16 @@ const SalesAmountInfo: React.FC<SalesAmountInfoProps> = ({ subtotal }) => {
                 </div>
                 <div className='flex justify-between'>
                     <p>Paid</p>
-                    <p>1000 &#2547;</p>
+                    <div>
+                        <input
+                            type="number"
+                            // className='border rounded-lg h-8 w-20'
+                            className='w-20 border-b border-white text-end bg-transparent outline-none mr-1'
+                            placeholder='00'
+                            onChange={handlePaidPriceChange}
+                        />
+                        &#2547;
+                    </div>
                 </div>
 
                 <div className='bg-white h-5 w-5 absolute rounded-full -left-3'></div>
@@ -52,7 +71,7 @@ const SalesAmountInfo: React.FC<SalesAmountInfoProps> = ({ subtotal }) => {
 
                 <div className='flex justify-between'>
                     <p>Due</p>
-                    <p>0 &#2547;</p>
+                    <p>{subtotal - discountPrice - paidPrice} &#2547;</p>
                 </div>
             </div>
             <Button label='Print' customClass='w-full' />
