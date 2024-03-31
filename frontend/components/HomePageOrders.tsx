@@ -62,20 +62,20 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({cart, setCart}) => {
                                 {cart.map((product, index) => (
                                     <tr key={product.id} className={index % 2 === 0 ? 'bg-ghost bg-opacity-15' : ''}>
                                         <td className='flex items-center gap-x-2 border-r border-dashed'>
-                                            <Image src={product.imageUrl} alt={product.productName} width={40} height={40} className='rounded-md' />
+                                            <Image src={product.imageUrl} alt={product.name} width={40} height={40} className='rounded-md' />
 
                                             <div className='text-xs'>
-                                                <p className='font-bold'>{product.productName?.slice(0, 10)}</p>
-                                                <p>{product.productSize}</p>
+                                                <p className='font-bold'>{product.brand?.slice(0, 10)}</p>
+                                                <p>{product.name}</p>
                                             </div>
                                         </td>
-                                        <td className='border-r border-dashed text-end pr-1'>{product.productPrice} &#2547;</td>
+                                        <td className='border-r border-dashed text-end pr-1'>{product.price} &#2547;</td>
                                         <td className='border-r border-dashed text-center'>
                                             <div className='flex justify-between items-center gap-x-2 px-0.5'>
                                                 <ProductQuantity product={product} onQuantityChange={handleQuantityChange} />
                                             </div>
                                         </td>
-                                        <td className='border-r border-dashed text-end pr-1'>{product.productPrice * product.productQuantity} &#2547;</td>
+                                        <td className='border-r border-dashed text-end pr-1'>{product.price * product.productQuantity} &#2547;</td>
                                         <td className='text-red-500 text-2xl opacity-20 hover:opacity-100 cursor-pointer duration-300 ease-in-out'><MdDeleteOutline /></td>
                                     </tr>
                                 ))}

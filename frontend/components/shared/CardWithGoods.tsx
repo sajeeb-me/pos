@@ -16,8 +16,24 @@ interface CardWithGoodsProps {
 
 const CardWithGoods: React.FC<CardWithGoodsProps> = ({ goods, cart, setCart }) => {
 
+    console.log(cart)
+
     const addToCart = (subProduct: any) => {
-        setCart([...cart, subProduct]);
+        // setCart([...cart, subProduct]);
+
+        const existingProductIndex = cart.findIndex(item => item.id === subProduct.id);
+        if (existingProductIndex !== -1) {
+            // If product already exists in cart, increase quantity
+            const updatedCart = [...cart];
+            updatedCart[existingProductIndex].productQuantity++;
+            setCart(updatedCart);
+            // saveCartToLocalStorage(updatedCart);
+        } else {
+            // If product does not exist in cart, add it with quantity 1
+            const updatedCart = [...cart, { ...subProduct, productQuantity: 1 }];
+            setCart(updatedCart);
+            // saveCartToLocalStorage(updatedCart);
+        }
     };
 
     return (
@@ -33,9 +49,9 @@ const CardWithGoods: React.FC<CardWithGoodsProps> = ({ goods, cart, setCart }) =
                     {
                         goods.subProducts.map((subProduct, index) => (
                             <li key={index} className="relative border hover:border-primary p-1 rounded-md min-w-14 cursor-pointer duration-300">
-                                <div 
-                                onClick={() => addToCart(subProduct)}
-                                className='bg-primary bg-opacity-40 start-0 top-0 rounded-md h-full w-full absolute flex items-center opacity-0 hover:opacity-100 duration-300'>
+                                <div
+                                    onClick={() => addToCart(subProduct)}
+                                    className='bg-primary bg-opacity-40 start-0 top-0 rounded-md h-full w-full absolute flex items-center opacity-0 hover:opacity-100 duration-300'>
                                     <p className='text-white text-center w-full text-4xl'>+</p>
                                 </div>
                                 <p className='font-semibold'>{subProduct.name}</p>
