@@ -66,14 +66,14 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
                             <h4>Bill no</h4>
                             <p className='font-bold'>#0037</p>
                         </div>
-                        <div 
-                        className='text-xs cursor-pointer text-red-300'
-                        onClick={() => handleClearAll()}
+                        <div
+                            className='text-xs cursor-pointer text-red-300'
+                            onClick={() => handleClearAll()}
                         >
                             Clear All
                         </div>
                     </div>
-                    <div className='mt-2 max-h-[38vh] 2xl:max-h-[45vh] overflow-y-scroll'>
+                    <div className='mt-2 h-[38vh] 2xl:h-[45vh] overflow-y-scroll'>
                         <table className='w-full'>
                             <thead>
                                 <tr>
@@ -84,39 +84,45 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {cart.map((product, index) => (
-                                    <tr key={product.id} className={index % 2 === 0 ? 'bg-ghost bg-opacity-15' : ''}>
-                                        <td className='flex items-center gap-x-2 border-r border-dashed'>
-                                            <Image src={product.imageUrl} alt={product.name} width={40} height={40} className='rounded-md' />
+                                {
+                                    cart.length === 0 ? (
+                                        <tr>
+                                            <td colSpan={4} className='text-center pt-20 opacity-20'>No product added</td>
+                                        </tr>)
+                                        :
+                                        (cart.map((product, index) => (
+                                            <tr key={product.id} className={index % 2 === 0 ? 'bg-ghost bg-opacity-15' : ''}>
+                                                <td className='flex items-center gap-x-2 border-r border-dashed'>
+                                                    <Image src={product.imageUrl} alt={product.name} width={40} height={40} className='rounded-md' />
 
-                                            <div className='text-xs'>
-                                                <p className='font-bold'>{product.brand?.slice(0, 10)}</p>
-                                                <p>{product.name}</p>
-                                            </div>
-                                        </td>
-                                        <td className='border-r border-dashed text-end pr-1'>
-                                            <input
-                                                type="number"
-                                                value={product.price}
-                                                onChange={(e) => handlePriceChange(product, parseInt(e.target.value))}
-                                                className='w-10 text-center bg-transparent outline-none'
-                                            />
-                                            &#2547;
-                                        </td>
-                                        <td className='border-r border-dashed text-center'>
-                                            <div className='flex justify-between items-center gap-x-2 px-0.5'>
-                                                <ProductQuantity product={product} onQuantityChange={handleQuantityChange} />
-                                            </div>
-                                        </td>
-                                        <td className='border-r border-dashed text-end pr-1'>{isNaN(product.price * product.productQuantity) ? 0 : product.price * product.productQuantity} &#2547;</td>
-                                        <td
-                                            className='text-red-500 text-2xl opacity-20 hover:opacity-100 cursor-pointer duration-300 ease-in-out'
-                                            onClick={() => handleDeleteProduct(product.id)}
-                                        >
-                                            <MdDeleteOutline />
-                                        </td>
-                                    </tr>
-                                ))}
+                                                    <div className='text-xs'>
+                                                        <p className='font-bold'>{product.brand?.slice(0, 10)}</p>
+                                                        <p>{product.name}</p>
+                                                    </div>
+                                                </td>
+                                                <td className='border-r border-dashed text-end pr-1'>
+                                                    <input
+                                                        type="number"
+                                                        value={product.price}
+                                                        onChange={(e) => handlePriceChange(product, parseInt(e.target.value))}
+                                                        className='w-10 text-center bg-transparent outline-none'
+                                                    />
+                                                    &#2547;
+                                                </td>
+                                                <td className='border-r border-dashed text-center'>
+                                                    <div className='flex justify-between items-center gap-x-2 px-0.5'>
+                                                        <ProductQuantity product={product} onQuantityChange={handleQuantityChange} />
+                                                    </div>
+                                                </td>
+                                                <td className='border-r border-dashed text-end pr-1'>{isNaN(product.price * product.productQuantity) ? 0 : product.price * product.productQuantity} &#2547;</td>
+                                                <td
+                                                    className='text-red-500 text-2xl opacity-20 hover:opacity-100 cursor-pointer duration-300 ease-in-out'
+                                                    onClick={() => handleDeleteProduct(product.id)}
+                                                >
+                                                    <MdDeleteOutline />
+                                                </td>
+                                            </tr>
+                                        )))}
                             </tbody>
                         </table>
                     </div>
