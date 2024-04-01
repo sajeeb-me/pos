@@ -19,13 +19,13 @@ const HomePage: React.FC = () => {
     const [cart, setCart] = useState<Product[]>([]);
 
     return (
-        <div className=''>
+        <div>
             <BottomBar />
             <div className='grid grid-cols-3 gap-x-2'>
                 <div className='col-span-2  border-black'>
                     <HomePageGoods cart={cart} setCart={setCart} />
                 </div>
-                <div className='col-span-1 bg-white shadow-md p-3 rounded-xl'>
+                <div className='col-span-1 bg-white shadow-md p-3 rounded-xl h-[87vh]'>
                     <HomePageOrders cart={cart} setCart={setCart} />
                 </div>
             </div>
