@@ -32,12 +32,16 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
         ));
     };
 
-    const handlePriceChange = (product: any, newPrice: any) => {
+    const handlePriceChange = (updatedProduct: any, newPrice: any) => {
         setCart((prevCart: ProductPriceQuantityTotalProps[]) => prevCart.map((product: ProductPriceQuantityTotalProps) =>
-            product.id === product.id
+            product.id === updatedProduct.id
                 ? { ...product, price: newPrice }
                 : product
         ));
+    };
+
+    const handleDeleteProduct = (productId: string) => {
+        setCart((prevCart: ProductPriceQuantityTotalProps[]) => prevCart.filter((product: ProductPriceQuantityTotalProps) => product.id !== productId));
     };
 
     const subtotal = cart.reduce((total, product) => total + (isNaN(product.price) || isNaN(product.productQuantity) ? 0 : product.price * product.productQuantity), 0);
@@ -98,7 +102,12 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
                                             </div>
                                         </td>
                                         <td className='border-r border-dashed text-end pr-1'>{isNaN(product.price * product.productQuantity) ? 0 : product.price * product.productQuantity} &#2547;</td>
-                                        <td className='text-red-500 text-2xl opacity-20 hover:opacity-100 cursor-pointer duration-300 ease-in-out'><MdDeleteOutline /></td>
+                                        <td
+                                            className='text-red-500 text-2xl opacity-20 hover:opacity-100 cursor-pointer duration-300 ease-in-out'
+                                            onClick={() => handleDeleteProduct(product.id)}
+                                        >
+                                            <MdDeleteOutline />
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
