@@ -22,16 +22,26 @@ interface HomePageOrdersProps {
     setCart: any;
 }
 
-const HomePageOrders: React.FC<HomePageOrdersProps> = ({cart, setCart}) => {
+const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
+
     const handleQuantityChange = (newQuantity: any) => {
-        setCart((prevCart: ProductPriceQuantityTotalProps[]) => prevCart.map((product: ProductPriceQuantityTotalProps) => 
-            product.id === newQuantity.id 
-            ? { ...product, productQuantity: newQuantity.productQuantity }
-            : product
+        console.log("newQuantity", newQuantity)
+        setCart((prevCart: ProductPriceQuantityTotalProps[]) => prevCart.map((product: ProductPriceQuantityTotalProps) =>
+            product.id === newQuantity.id
+                ? { ...product, productQuantity: newQuantity.productQuantity }
+                : product
         ));
     };
 
-    const subtotal =  cart.reduce((total, product) => total + (product.price * product.productQuantity), 0);
+    const handlePriceChange = (product: any, newPrice: any) => {
+        setCart((prevCart: ProductPriceQuantityTotalProps[]) => prevCart.map((product: ProductPriceQuantityTotalProps) =>
+            product.id === product.id
+                ? { ...product, price: newPrice }
+                : product
+        ));
+    };
+
+    const subtotal = cart.reduce((total, product) => total + (product.price * product.productQuantity), 0);
 
     return (
         <div className='h-full flex flex-col justify-between'>
@@ -74,13 +84,21 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({cart, setCart}) => {
                                                 <p>{product.name}</p>
                                             </div>
                                         </td>
-                                        <td className='border-r border-dashed text-end pr-1'>{product.price} &#2547;</td>
+                                        <td className='border-r border-dashed text-end pr-1'>
+                                            <input
+                                                type="number"
+                                                value={product.price}
+                                                onChange={(e) => handlePriceChange(product, parseInt(e.target.value))}
+                                                className='w-10 text-center bg-transparent outline-none'
+                                            />
+                                            &#2547;
+                                        </td>
                                         <td className='border-r border-dashed text-center'>
                                             <div className='flex justify-between items-center gap-x-2 px-0.5'>
                                                 <ProductQuantity product={product} onQuantityChange={handleQuantityChange} />
                                             </div>
                                         </td>
-                                        <td className='border-r border-dashed text-end pr-1'>{product.price * product.productQuantity} &#2547;</td>
+                                        <td className='border-r border-dashed text-end pr-1'>{isNaN(product.price * product.productQuantity) ? 0 : product.price * product.productQuantity} &#2547;</td>
                                         <td className='text-red-500 text-2xl opacity-20 hover:opacity-100 cursor-pointer duration-300 ease-in-out'><MdDeleteOutline /></td>
                                     </tr>
                                 ))}
