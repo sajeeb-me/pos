@@ -25,7 +25,6 @@ interface HomePageOrdersProps {
 const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
 
     const handleQuantityChange = (newQuantity: any) => {
-        console.log("newQuantity", newQuantity)
         setCart((prevCart: ProductPriceQuantityTotalProps[]) => prevCart.map((product: ProductPriceQuantityTotalProps) =>
             product.id === newQuantity.id
                 ? { ...product, productQuantity: newQuantity.productQuantity }
@@ -41,7 +40,7 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
         ));
     };
 
-    const subtotal = cart.reduce((total, product) => total + (product.price * product.productQuantity), 0);
+    const subtotal = cart.reduce((total, product) => total + (isNaN(product.price) || isNaN(product.productQuantity) ? 0 : product.price * product.productQuantity), 0);
 
     return (
         <div className='h-full flex flex-col justify-between'>
