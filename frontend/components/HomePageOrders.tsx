@@ -44,6 +44,10 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
         setCart((prevCart: ProductPriceQuantityTotalProps[]) => prevCart.filter((product: ProductPriceQuantityTotalProps) => product.id !== productId));
     };
 
+    const handleClearAll = () => {
+        setCart([]);
+    };
+
     const subtotal = cart.reduce((total, product) => total + (isNaN(product.price) || isNaN(product.productQuantity) ? 0 : product.price * product.productQuantity), 0);
 
     return (
@@ -62,7 +66,10 @@ const HomePageOrders: React.FC<HomePageOrdersProps> = ({ cart, setCart }) => {
                             <h4>Bill no</h4>
                             <p className='font-bold'>#0037</p>
                         </div>
-                        <div className='text-xs cursor-pointer text-red-300'>
+                        <div 
+                        className='text-xs cursor-pointer text-red-300'
+                        onClick={() => handleClearAll()}
+                        >
                             Clear All
                         </div>
                     </div>
